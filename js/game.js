@@ -3,7 +3,8 @@
   const SEARCH_BUTTON = document.getElementById('run_search');
   const SEARCH_INPUT = document.getElementById('search');
   const NAME_PLACEHOLDER = document.getElementById('name');
-  const IMAGE_PLACEHOLDER = document.getElementById('image')
+  const IMAGE_PLACEHOLDER = document.getElementById('image');
+  const MOVES_PLACEHOLDER = document.getElementById('moves');
 
   // const make_url = (route) => {
   //   return API_BASE + route;
@@ -38,10 +39,18 @@ async function search(input) {
     }
   })
   .then(function(data) {
-      console.log(data.id)
+      var moves_html = "";
+      var move_all = ""
       NAME_PLACEHOLDER.innerHTML = data.name;
       IMAGE_PLACEHOLDER.setAttribute('src',data.sprites.front_default);
       var moves = data.moves;
+      moves.forEach((move,i) => {
+        if(i < 4) {
+          moves_html = `${moves_html}<li class="list-none capitalize px-4 py-2 bg-white text-gray-700 my-2">${move.move.name}</li>`;
+        }
+      });
+
+      MOVES_PLACEHOLDER.innerHTML = moves_html;
       getSpecies(`${API_BASE}pokemon-species/${data.id}`);
   })
 }
