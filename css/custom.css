@@ -1,0 +1,30 @@
+.bg_yellow {
+  background-color: #FFCB05
+}
+.text_yellow {
+  color: #FFCB05;
+}
+.border_yellow {
+  border-color: #FFCB05;
+}
+.bg_blue {
+  background-color: #3D7DCA;
+}
+.text_blue {
+  color: #3D7DCA;
+}
+.border_blue {
+  border-color: #3D7DCA;
+}
+.bg_navy_blue {
+  background-color:  #003A70;
+}
+.text_navy_blue {
+  color:  #003A70;
+}
+.border_navy_blue {
+  border-color: #003A70;
+}
+.pokemon_font {
+  font-family: 'Press Start 2P', cursive;
+}
